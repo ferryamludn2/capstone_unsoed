@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainPage extends StatelessWidget {
-  final websiteUri = Uri.parse("https://www.google.com/");
+  final websiteUri = Uri.parse("https://frontend-tanijual.vercel.app/");
   MainPage({super.key});
 
   final List<Map<String, String>> products = [
@@ -36,6 +36,21 @@ class MainPage extends StatelessWidget {
       'name': 'Tomat',
       'price': 'Rp.10.000'
     },
+    {
+      'image': 'assets/images/brokoli.png',
+      'name': 'Brokoli',
+      'price': 'Rp.10.000'
+    },
+    {
+      'image': 'assets/images/kangkung.png',
+      'name': 'Kangkung',
+      'price': 'Rp.15.000'
+    },
+    {
+      'image': 'assets/images/o.png',
+      'name': 'Others',
+      'price': 'Rp.???'
+    },
   ];
 
   @override
@@ -44,7 +59,7 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Jual Tani"),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 52, 140, 212),
+        backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
       ),
       body: GridView.builder(
@@ -100,8 +115,8 @@ class MainPage extends StatelessWidget {
                     }
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromARGB(255, 52, 140, 212)),
+                    backgroundColor: WidgetStateProperty.all<Color>(
+                       Colors.teal),
                   ),
                   child: const Text(
                     'See Product',
